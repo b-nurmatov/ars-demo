@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="../scripts/tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script><link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./favicons/favicon-192x192.png">
+<link rel="shortcut icon" type="image/x-icon" href="./favicons/favicon.ico">
+<link rel="icon" type="image/x-icon" href="./favicons/favicon.ico">
+  </head>
+  <body class="bg-neutral-100 font-sans">
+    <div class="flex justify-center items-center bg-[#F5F5F5] sticky top-0 z-50" id="menu">
+      <div class="flex flex-wrap justify-between items-center px-4 lg:px-16 py-4 max-w-screen-xl w-full">
+        <div class="lg:hidden basis-0 shrink grow">
+          <button class="button undefined" id="menu-toggle">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+                <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                  <use xlink:href="/images/sprite.svg#solar:hamburger-menu-outline"></use>
+                </svg>
+              </div>
+              <div class="button-textline">Меню</div>
+              <div class="button-icon-next">
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="hidden px-4 basis-0 shrink grow sm:flex justify-center items-center lg:justify-start lg:order-1"><a class="block w-full max-w-[10.625rem] h-[5rem] bg-[url(/images/logo.png)] bg-no-repeat bg-center bg-contain" href="index.html"></a></div>
+        <div class="basis-0 shrink grow flex justify-end items-center lg:order-3 relative">
+          <div class="flex flex-col">
+            <button class="button undefined" id="lang-toggle">
+              <div class="button-inner">
+                <div class="button-icon-prev">
+                  <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                    <use xlink:href="/images/sprite.svg#solar:global-broken"></use>
+                  </svg>
+                </div>
+                <div class="button-textline">RU</div>
+                <div class="button-icon-next">
+                  <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                    <use xlink:href="/images/sprite.svg#solar:alt-arrow-down-bold"></use>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="relative">
+              <div class="rounded-2xl bg-white shadow-2xl absolute right-0 top-1 w-full border border-stone-200 overflow-hidden hidden" id="lang-menu">
+                <ul class="divide-y">
+                  <li><a class="px-4 py-2 flex text-stone-600 uppercase hover:text-orange-400" href="#">Ru</a></li>
+                  <li><a class="px-4 py-2 flex text-stone-600 uppercase hover:text-orange-400" href="#">Uz</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-auto overflow-hidden lg:overflow-visible menu-hidden lg:order-2" id="nav">
+          <ul class="justify-start lg:justify-center items-center gap-2 flex flex-col lg:flex-row pt-8 lg:pt-0">
+            <li><a class="button undefined" href="internet.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Интернет</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="iptv.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">IPTV</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="services.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Услуги</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="contacts.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Контакты</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+            const topMenu = new Menu({
+                toggleID: 'menu-toggle', 
+                menuID: 'menu', 
+                navID: 'nav',
+                langToggleID: 'lang-toggle',
+                langMenuID: 'lang-menu'
+            });
+        });
+    </script>
+        
+    <div class="flex justify-center items-center bg-neutral-100">
+      <div class="w-full max-w-screen-xl px-4 lg:px-16 py-4 gap-2 flex flex-row flex-wrap justify-between items-center">
+        <div class="flex flex-row justify-start items-center gap-8 lg:w-auto"><a class="button-orange undefined" href="#">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+              </div>
+              <div class="button-textline">Подключиться</div>
+              <div class="button-icon-next">
+              </div>
+            </div></a>
+          <div class="hidden lg:block w-full lg:w-px h-px lg:h-8 bg-black/25"></div>
+          <ul class="hidden md:flex flex-col md:flex-row justify-start items-center flex-wrap gap-4 w-full lg:w-auto">
+            <li><a class="button-text undefined" href="tel: +998712002001">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 200-20-01</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text undefined" href="tel: +998712735551">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 273-55-51</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text undefined" href="tel: +998712733399">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 273-33-99</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+          </ul>
+        </div>
+        <div class="lg:w-auto flex justify-center items-center lg:justify-end"><a class="button-purple undefined" href="#">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+                <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                  <use xlink:href="/images/sprite.svg#solar:user-broken"></use>
+                </svg>
+              </div>
+              <div class="button-textline">Кабинет</div>
+              <div class="button-icon-next">
+              </div>
+            </div></a>
+        </div>
+      </div>
+    </div>
+    <header>
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="container">
+          <div class="py-6">
+            <div class="splide" id="banner">
+              <div class="splide__track rounded-[2rem]">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <div class="relative w-full aspect-auto lg:aspect-[21/9]"><img class="absolute left-0 top-0 z-0 w-full h-full object-cover brightness-50 lg:brightness-100" src="./media/slide-01.jpg">
+                      <div class="relative left-0 top-0 z-10 text-white flex flex-col gap-8 px-8 py-16 lg:px-20 lg:py-20 w-full h-full justify-center items-start max-w-[32.5rem]">
+                        <h3 class="text-[1.5rem]/[100%] sm:text-[2rem]/[100%] md:text-[3rem]/[100%] lg:text-[4rem]/[100%] font-extrabold uppercase inline-flex flex-col"><span class="text-[0.75em]/[100%] font-normal">Акция</span><span>Cashback</span></h3>
+                        <p class="text-base/[150%]">Интернет-провайдер ООО «ARS-INFORM» дарит Cashback до 12% при непрерывной оплате абонентской платы.</p>
+                        <button class="button shadow-none">
+                          <div class="button-inner">
+                            <div class="button-icon-prev">
+                            </div>
+                            <div class="button-textline">Подробнее</div>
+                            <div class="button-icon-next">
+                              <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                                <use xlink:href="/images/sprite.svg#solar:alt-arrow-right-outline"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="relative w-full aspect-auto lg:aspect-[21/9]"><img class="absolute left-0 top-0 z-0 w-full h-full object-cover brightness-50 lg:brightness-100" src="./media/slide-01.jpg">
+                      <div class="relative left-0 top-0 z-10 text-white flex flex-col gap-8 px-8 py-16 lg:px-20 lg:py-20 w-full h-full justify-center items-start max-w-[32.5rem]">
+                        <h3 class="text-[1.5rem]/[100%] sm:text-[2rem]/[100%] md:text-[3rem]/[100%] lg:text-[4rem]/[100%] font-extrabold uppercase inline-flex flex-col"><span class="text-[0.75em]/[100%] font-normal">Акция</span><span>Cashback</span></h3>
+                        <p class="text-base/[150%]">Интернет-провайдер ООО «ARS-INFORM» дарит Cashback до 12% при непрерывной оплате абонентской платы.</p>
+                        <button class="button shadow-none">
+                          <div class="button-inner">
+                            <div class="button-icon-prev">
+                            </div>
+                            <div class="button-textline">Подробнее</div>
+                            <div class="button-icon-next">
+                              <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                                <use xlink:href="/images/sprite.svg#solar:alt-arrow-right-outline"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="relative w-full aspect-auto lg:aspect-[21/9]"><img class="absolute left-0 top-0 z-0 w-full h-full object-cover brightness-50 lg:brightness-100" src="./media/slide-01.jpg">
+                      <div class="relative left-0 top-0 z-10 text-white flex flex-col gap-8 px-8 py-16 lg:px-20 lg:py-20 w-full h-full justify-center items-start max-w-[32.5rem]">
+                        <h3 class="text-[1.5rem]/[100%] sm:text-[2rem]/[100%] md:text-[3rem]/[100%] lg:text-[4rem]/[100%] font-extrabold uppercase inline-flex flex-col"><span class="text-[0.75em]/[100%] font-normal">Акция</span><span>Cashback</span></h3>
+                        <p class="text-base/[150%]">Интернет-провайдер ООО «ARS-INFORM» дарит Cashback до 12% при непрерывной оплате абонентской платы.</p>
+                        <button class="button shadow-none">
+                          <div class="button-inner">
+                            <div class="button-icon-prev">
+                            </div>
+                            <div class="button-textline">Подробнее</div>
+                            <div class="button-icon-next">
+                              <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                                <use xlink:href="/images/sprite.svg#solar:alt-arrow-right-outline"></use>
+                              </svg>
+                            </div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div><script>
+                document.addEventListener( 'DOMContentLoaded', function() {
+                    var splide = new Splide( '#banner', {
+                        type: 'loop',
+                        autoplay: true,
+                        interval: 5000,
+                        pagination: true,
+                        arrows: false
+                    } );
+                    splide.mount();
+                } );
+            </script>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"><a class="card-gradient card-shadow flex flex-col items-center px-5 pt-8 pb-4 gap-4 rounded-2xl text-center text-black/70 text-sm/[115%] text-semibold hover:text-orange-600" href="text-page.html">
+              <svg class="w-16 h-16 text-orange-400" width="16" height="16" viewbox="0 0 16 16">
+                <use xlink:href="/images/sprite.svg#solar:rocket-2-bold-duotone"></use>
+              </svg><span>Проверить скорость</span></a><a class="card-gradient card-shadow flex flex-col items-center px-5 pt-8 pb-4 gap-4 rounded-2xl text-center text-black/70 text-sm/[115%] text-semibold hover:text-orange-600" href="text-page.html">
+              <svg class="w-16 h-16 text-orange-400" width="16" height="16" viewbox="0 0 16 16">
+                <use xlink:href="/images/sprite.svg#solar:settings-bold-duotone"></use>
+              </svg><span>Проверить скорость</span></a><a class="card-gradient card-shadow flex flex-col items-center px-5 pt-8 pb-4 gap-4 rounded-2xl text-center text-black/70 text-sm/[115%] text-semibold hover:text-orange-600" href="text-page.html">
+              <svg class="w-16 h-16 text-orange-400" width="16" height="16" viewbox="0 0 16 16">
+                <use xlink:href="/images/sprite.svg#solar:wallet-money-bold-duotone"></use>
+              </svg><span>Как оплатить?</span></a><a class="card-gradient card-shadow flex flex-col items-center px-5 pt-8 pb-4 gap-4 rounded-2xl text-center text-black/70 text-sm/[115%] text-semibold hover:text-orange-600" href="text-page.html">
+              <svg class="w-16 h-16 text-orange-400" width="16" height="16" viewbox="0 0 16 16">
+                <use xlink:href="/images/sprite.svg#solar:help-bold-duotone"></use>
+              </svg><span>Служба поддержки</span></a><a class="card-gradient card-shadow flex flex-col items-center px-5 pt-8 pb-4 gap-4 rounded-2xl text-center text-black/70 text-sm/[115%] text-semibold hover:text-orange-600" href="text-page.html">
+              <svg class="w-16 h-16 text-orange-400" width="16" height="16" viewbox="0 0 16 16">
+                <use xlink:href="/images/sprite.svg#solar:hand-money-bold-duotone"></use>
+              </svg><span>Акция Cashback</span></a><a class="card-gradient card-shadow flex flex-col items-center px-5 pt-8 pb-4 gap-4 rounded-2xl text-center text-black/70 text-sm/[115%] text-semibold hover:text-orange-600" href="text-page.html">
+              <svg class="w-16 h-16 text-orange-400" width="16" height="16" viewbox="0 0 16 16">
+                <use xlink:href="/images/sprite.svg#solar:question-square-bold-duotone"></use>
+              </svg><span>Частые вопросы</span></a>
+          </div>
+          <div class="py-16 flex flex-col md:flex-row items-center gap-8">
+            <div class="w-full md:w-1/2 flex flex-col gap-10 text-center md:text-left">
+              <h2 class="text-[2rem]/[120%] uppercase">Подключение к интернету</h2>
+              <p class="text-base">Подключение производится совершенно бесплатно, и к тому же <br/>с высокой оперативностью. Подключаясь сейчас, Вы, получаете безлимитный доступ к сети на большой скорости по вполне приемлемой цене.</p>
+              <div class="flex gap-2 justify-center md:justify-start flex-wrap">
+                <button class="button undefined">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:map-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">Зона покрытия</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div>
+                </button>
+                <button class="button-orange undefined">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:check-circle-outline"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">Подключиться</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 bg-[url(/images/connection.webp)] aspect-[3/2] bg-contain mix-blend-multiply"></div>
+          </div>
+          <div class="py-12">
+            <div class="w-full md:aspect-[21/9] rounded-3xl relative overflow-hidden"><img class="absolute left-0 top-0 z-0 w-full h-full object-cover" src="./media/homepage-iptv-banner.jpg">
+              <div class="relative md:absolute top-0 z-10 w-full md:max-w-[37.5rem] h-full flex flex-col gap-8 justify-center items-start p-10 text-white ">
+                <h1 class="text-[3rem]/[120%] md:text-[3.5rem]/[120%] lg:text-[4rem]/[120%] tracking-wide font-bold uppercase">IPTV</h1>
+                <p class="text-base/[150%]">Погрузитесь в мир цифрового развлечения с нашим IPTV сервисом. Наслаждайтесь высококачественным видео, доступом к многочисленным каналам и возможностью смотреть любимые программы в любое время!</p>
+                <button class="button-orange undefined">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подробнее</div>
+                    <div class="button-icon-next">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:alt-arrow-right-outline"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="py-10">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+              <button class="button col-span-2 md:col-span-1" id="toggle-1">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Новости</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div>
+              </button>
+              <button class="button " id="toggle-2">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Оповещения</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div>
+              </button>
+              <button class="button " id="toggle-3">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Акции</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div>
+              </button>
+            </div>
+            <aside class="pt-10" id="tab-1">
+              <ul>
+                <li class="border-b border-black/15"><a class="py-2 flex flex-col-reverse gap-1 hover:text-orange-600" href="text-page.html">
+                    <h3 class="text-base/[150%]">ARS-INFORM: Бесплатное Подключение к Высокоскоростному Интернету в Ташкенте и Самарканде!</h3>
+                    <time class="text-xs/[100%] text-black/75" datetime="2024-01-01">01 / 01 / 2024</time></a></li>
+                <li class="border-b border-black/15"><a class="py-2 flex flex-col-reverse gap-1 hover:text-orange-600" href="text-page.html">
+                    <h3 class="text-base/[150%]">Круглосуточная Поддержка и Надежное Соединение: Почему ARS-INFORM Лидирует среди Провайдеров Узбекистана.</h3>
+                    <time class="text-xs/[100%] text-black/75" datetime="2024-01-01">01 / 01 / 2024</time></a></li>
+                <li class="border-b border-black/15"><a class="py-2 flex flex-col-reverse gap-1 hover:text-orange-600" href="text-page.html">
+                    <h3 class="text-base/[150%]">Интернет и IP-TV в Одном Пакете: ARS-INFORM Предлагает Уникальные Тарифы для Дома и Офиса.</h3>
+                    <time class="text-xs/[100%] text-black/75" datetime="2024-01-01">01 / 01 / 2024</time></a></li>
+              </ul>
+              <div class="flex justify-end pt-6"><a class="button-text undefined" href="news.html">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Все новости</div>
+                    <div class="button-icon-next">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:alt-arrow-right-outline"></use>
+                      </svg>
+                    </div>
+                  </div></a>
+              </div>
+            </aside>
+            <aside class="pt-10" id="tab-2">
+              <ul>
+                <li class="border-b border-black/15"><a class="py-2 flex flex-col-reverse gap-1 hover:text-orange-600" href="text-page.html">
+                    <h3 class="text-base/[150%]">Уведомление для абонентов: прекращение приема оплат через Paynet.</h3>
+                    <time class="text-xs/[100%] text-black/75" datetime="2024-01-01">01 / 01 / 2024</time></a></li>
+                <li class="border-b border-black/15"><a class="py-2 flex flex-col-reverse gap-1 hover:text-orange-600" href="text-page.html">
+                    <h3 class="text-base/[150%]">Вниманию абонентов Яшнабадского района!</h3>
+                    <time class="text-xs/[100%] text-black/75" datetime="2024-01-01">01 / 01 / 2024</time></a></li>
+                <li class="border-b border-black/15"><a class="py-2 flex flex-col-reverse gap-1 hover:text-orange-600" href="text-page.html">
+                    <h3 class="text-base/[150%]">Профилактические работы на источнике сигнала IPTV.</h3>
+                    <time class="text-xs/[100%] text-black/75" datetime="2024-01-01">01 / 01 / 2024</time></a></li>
+                <li class="border-b border-black/15"><a class="py-2 flex flex-col-reverse gap-1 hover:text-orange-600" href="text-page.html">
+                    <h3 class="text-base/[150%]">Технические объявление.</h3>
+                    <time class="text-xs/[100%] text-black/75" datetime="2024-01-01">01 / 01 / 2024</time></a></li>
+              </ul>
+            </aside>
+            <aside class="pt-10" id="tab-3">
+              <ul>
+                <li class="border-b border-black/15"><a class="py-2 flex flex-col-reverse gap-1 hover:text-orange-600" href="text-page.html">
+                    <h3 class="text-base/[150%]">Программа лояльности “Cashback”.</h3>
+                    <time class="text-xs/[100%] text-black/75" datetime="2024-01-01">01 / 01 / 2024</time></a></li>
+              </ul>
+            </aside><script>
+                document.addEventListener( 'DOMContentLoaded', function() {
+                    const tabManager = new TabManager([
+                        { toggleID: 'toggle-1', tabID: 'tab-1' },
+                        { toggleID: 'toggle-2', tabID: 'tab-2' },
+                        { toggleID: 'toggle-3', tabID: 'tab-3' }
+                    ], 0);
+                } );
+            </script>
+          </div>
+          <div class="py-16 flex flex-col gap-8">
+            <div>
+              <h2 class="text-[2rem]/[120%] mb-6 uppercase">Провайдер «ARS-INFORM»</h2>
+              <p class="text-base mb-2 last:mb-0">Компания «ARS-INFORM» – ведущий интернет провайдер Узбекистана, предоставляющий качественный высокоскоростной доступ к интернету <br/>и IP-TV.</p>
+              <p class="text-base mb-2 last:mb-0">Отличное качество сигнала, стабильная скорость, сбалансированные тарифы, гибкие формы оплаты – вот главные преимущества провайдера ARS-INFORM. Подключение к интернету от ARS-INFORM позволит вам получить доступ ко всем онлайн сервисам для дома. К вашим услугам – скоростной интернет, ТВ.</p>
+              <p class="text-base mb-2 last:mb-0">Услуги провайдера доступны по любому адресу в Ташкенте и Самарканде. Просто отправьте заявку и уже через несколько часов получите выделенный доступ в интернет на стабильно высокой скорости!</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div class="card-gradient card-shadow p-6 rounded-2xl relative">
+                <h3 class="text-base/[120%] uppercase font-bold mb-4">Бесплатное подключение</h3>
+                <p class="text-base">Подключение производится совершенно бесплатно, и к тому же с высокой оперативностью. Подключаясь сейчас, Вы, получаете безлимитный доступ к сети на большой скорости по вполне приемлемой цене.</p>
+                <div class="w-4 h-4 bg-gray-300 rounded-full absolute right-3 top-3 shadow-[inset_0.125rem_0.125rem_0.125rem_rgba(0,0,0,0.15)]"></div>
+              </div>
+              <div class="card-gradient card-shadow p-6 rounded-2xl relative">
+                <h3 class="text-base/[120%] uppercase font-bold mb-4">Современные технологии</h3>
+                <p class="text-base">Выделенные линии – интернет проводится без использования телефонной линии – FTTx, GPON; Подключение с использованием телефонной линии посредством модема ADSL2+;</p>
+                <div class="w-4 h-4 bg-gray-300 rounded-full absolute right-3 top-3 shadow-[inset_0.125rem_0.125rem_0.125rem_rgba(0,0,0,0.15)]"></div>
+              </div>
+              <div class="card-gradient card-shadow p-6 rounded-2xl relative">
+                <h3 class="text-base/[120%] uppercase font-bold mb-4">Поддержка клиентов 24/7</h3>
+                <p class="text-base">Наш провайдер осуществляет техническую поддержку клиентов круглосуточно. Мы заботимся о каждом абоненте.</p>
+                <div class="w-4 h-4 bg-gray-300 rounded-full absolute right-3 top-3 shadow-[inset_0.125rem_0.125rem_0.125rem_rgba(0,0,0,0.15)]"></div>
+              </div>
+              <div class="card-gradient card-shadow p-6 rounded-2xl relative">
+                <h3 class="text-base/[120%] uppercase font-bold mb-4">Гибкие тарифные планы</h3>
+                <p class="text-base">Предлагаются разные тарифные планы, поэтому пользователи могут подбирать их по своему усмотрению. К этому стоит добавить, что каждый абонент “ARS-INFORM” имеет возможность воспользоваться комплексным пакетом “Интернет + IP-TV”</p>
+                <div class="w-4 h-4 bg-gray-300 rounded-full absolute right-3 top-3 shadow-[inset_0.125rem_0.125rem_0.125rem_rgba(0,0,0,0.15)]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="wrapper py-16">
+        <div class="container flex gap-16 flex-col lg:flex-row">
+          <div class="grow shrink basis-0 flex-col justify-start items-start gap-6 flex">
+            <div class="self-stretch text-black/75 text-2xl leading-7 font-normal">OOO “ARS-INFORM”</div>
+            <div class="self-stretch text-black/75 text-sm font-normal">(c) 2001-2020. Все права защищены. Лицензия Министерства по развитию информационных технологий и коммуникаций Республики Узбекистан АА №0005958 от 09 сентебря 2016 года.</div>
+            <div class="flex gap-4"><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:telegram-outline"></use>
+                    </svg>
+                  </div>
+                </div></a><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:instagram-outline"></use>
+                    </svg>
+                  </div>
+                </div></a><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:facebook-outline"></use>
+                    </svg>
+                  </div>
+                </div></a>
+            </div>
+          </div>
+          <div class="flex basis-0 grow shrink lg:max-w-[24.75rem] lg:pt-[3.1875rem]">
+            <ul class="flex flex-col lg:flex-row items-start lg:flex-wrap gap-6 lg:gap-4">
+              <li><a class="button-text undefined" href="tel: +998712002001">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 200-20-01</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="tel: +998712735551">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 273-55-51</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="tel: +998712733399">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 273-33-99</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="mailto: arsbox@ars.uz">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:letter-broken"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">arsbox@ars.uz</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="https://yandex.uz/maps/-/CHER4BkH">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:map-point-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">г.Ташкент, Чиланзар – 5, ул. Катартал 29</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="../scripts/tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script><link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./favicons/favicon-192x192.png">
+<link rel="shortcut icon" type="image/x-icon" href="./favicons/favicon.ico">
+<link rel="icon" type="image/x-icon" href="./favicons/favicon.ico">
+  </head>
+  <body class="bg-neutral-100 font-sans">
+    <div class="flex justify-center items-center bg-[#F5F5F5] sticky top-0 z-50" id="menu">
+      <div class="flex flex-wrap justify-between items-center px-4 lg:px-16 py-4 max-w-screen-xl w-full">
+        <div class="lg:hidden basis-0 shrink grow">
+          <button class="button undefined" id="menu-toggle">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+                <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                  <use xlink:href="/images/sprite.svg#solar:hamburger-menu-outline"></use>
+                </svg>
+              </div>
+              <div class="button-textline">Меню</div>
+              <div class="button-icon-next">
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="hidden px-4 basis-0 shrink grow sm:flex justify-center items-center lg:justify-start lg:order-1"><a class="block w-full max-w-[10.625rem] h-[5rem] bg-[url(/images/logo.png)] bg-no-repeat bg-center bg-contain" href="index.html"></a></div>
+        <div class="basis-0 shrink grow flex justify-end items-center lg:order-3 relative">
+          <div class="flex flex-col">
+            <button class="button undefined" id="lang-toggle">
+              <div class="button-inner">
+                <div class="button-icon-prev">
+                  <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                    <use xlink:href="/images/sprite.svg#solar:global-broken"></use>
+                  </svg>
+                </div>
+                <div class="button-textline">RU</div>
+                <div class="button-icon-next">
+                  <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                    <use xlink:href="/images/sprite.svg#solar:alt-arrow-down-bold"></use>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="relative">
+              <div class="rounded-2xl bg-white shadow-2xl absolute right-0 top-1 w-full border border-stone-200 overflow-hidden hidden" id="lang-menu">
+                <ul class="divide-y">
+                  <li><a class="px-4 py-2 flex text-stone-600 uppercase hover:text-orange-400" href="#">Ru</a></li>
+                  <li><a class="px-4 py-2 flex text-stone-600 uppercase hover:text-orange-400" href="#">Uz</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-auto overflow-hidden lg:overflow-visible menu-hidden lg:order-2" id="nav">
+          <ul class="justify-start lg:justify-center items-center gap-2 flex flex-col lg:flex-row pt-8 lg:pt-0">
+            <li><a class="button undefined" href="internet.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Интернет</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="iptv.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">IPTV</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="services.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Услуги</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="contacts.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Контакты</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+            const topMenu = new Menu({
+                toggleID: 'menu-toggle', 
+                menuID: 'menu', 
+                navID: 'nav',
+                langToggleID: 'lang-toggle',
+                langMenuID: 'lang-menu'
+            });
+        });
+    </script>
+        
+    <div class="flex justify-center items-center bg-neutral-100">
+      <div class="w-full max-w-screen-xl px-4 lg:px-16 py-4 gap-2 flex flex-row flex-wrap justify-between items-center">
+        <div class="flex flex-row justify-start items-center gap-8 lg:w-auto"><a class="button-orange undefined" href="#">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+              </div>
+              <div class="button-textline">Подключиться</div>
+              <div class="button-icon-next">
+              </div>
+            </div></a>
+          <div class="hidden lg:block w-full lg:w-px h-px lg:h-8 bg-black/25"></div>
+          <ul class="hidden md:flex flex-col md:flex-row justify-start items-center flex-wrap gap-4 w-full lg:w-auto">
+            <li><a class="button-text undefined" href="tel: +998712002001">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 200-20-01</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text undefined" href="tel: +998712735551">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 273-55-51</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text undefined" href="tel: +998712733399">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 273-33-99</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+          </ul>
+        </div>
+        <div class="lg:w-auto flex justify-center items-center lg:justify-end"><a class="button-purple undefined" href="#">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+                <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                  <use xlink:href="/images/sprite.svg#solar:user-broken"></use>
+                </svg>
+              </div>
+              <div class="button-textline">Кабинет</div>
+              <div class="button-icon-next">
+              </div>
+            </div></a>
+        </div>
+      </div>
+    </div>
+    <header>
+      <div class="wrapper pt-16">
+        <div class="container">
+          <div class="w-full md:aspect-[21/9] rounded-3xl relative overflow-hidden"><img class="absolute left-0 top-0 z-0 w-full h-full object-cover" src="../media/news-banner.jpg"/>
+            <div class="relative md:absolute top-0 z-10 w-full h-full flex flex-col justify-center p-12 text-white items-start text-left max-w-[51rem] left-0">
+              <h1 class="text-3xl md:text-4xl lg:text-5xl tracking-wide font-bold uppercase">Новости</h1>
+              <p class="text-lg my-4">Здесь вы найдете самые свежие и актуальные события о нашей компании, новых услугах, акциях и достижениях. Мы регулярно обновляем этот раздел, чтобы держать вас в курсе последних изменений и предложений.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="pt-8 pb-16 wrapper">
+        <div class="container">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="flex flex-col justify-between px-4 pt-5 pb-4 card-gradient card-shadow rounded-3xl">
+              <div class="flex flex-col px-1"><img class="w-full rounded-xl aspect-[4/3] mb-4" src="../media/news-01.jpg" alt="Бесплатный Wi-Fi &lt;br/&gt;в парках Ташкента">
+                <h3 class="text-lg font-semibold mb-3">Бесплатный Wi-Fi <br/>в парках Ташкента</h3>
+                <p class="text-base mb-3">В рамках социального проекта Ars Inform запускает бесплатные зоны Wi-Fi в центральных парках города. Оставайтесь на связи даже на прогулке!</p>
+                <time class="text-sm tracking-wide text-black/70 mb-4" datetime="2025-03-15">15 марта 2025</time>
+              </div><a class="button undefined" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Читать</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </article>
+            <article class="flex flex-col justify-between px-4 pt-5 pb-4 card-gradient card-shadow rounded-3xl">
+              <div class="flex flex-col px-1"><img class="w-full rounded-xl aspect-[4/3] mb-4" src="../media/news-02.jpg" alt="Ars Inform запускает &lt;br/&gt;мобильное приложение">
+                <h3 class="text-lg font-semibold mb-3">Ars Inform запускает <br/>мобильное приложение</h3>
+                <p class="text-base mb-3">еперь вы можете управлять своим тарифом, оплачивать услуги и обращаться в службу поддержки через новое мобильное приложение Ars Inform. Скачивайте бесплатно в App Store и Google Play.</p>
+                <time class="text-sm tracking-wide text-black/70 mb-4" datetime="2025-03-05">5 марта 2025</time>
+              </div><a class="button undefined" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Читать</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </article>
+            <article class="flex flex-col justify-between px-4 pt-5 pb-4 card-gradient card-shadow rounded-3xl">
+              <div class="flex flex-col px-1"><img class="w-full rounded-xl aspect-[4/3] mb-4" src="../media/news-03.jpg" alt="Обновление платформы IP-TV">
+                <h3 class="text-lg font-semibold mb-3">Обновление платформы IP-TV</h3>
+                <p class="text-base mb-3">Мы улучшили интерфейс и добавили новые функции в нашу IP-TV. Смотрите ваши любимые каналы в еще более удобном формате.</p>
+                <time class="text-sm tracking-wide text-black/70 mb-4" datetime="2025-02-28">28 февраля 2025</time>
+              </div><a class="button undefined" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Читать</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </article>
+            <article class="flex flex-col justify-between px-4 pt-5 pb-4 card-gradient card-shadow rounded-3xl">
+              <div class="flex flex-col px-1"><img class="w-full rounded-xl aspect-[4/3] mb-4" src="../media/news-04.jpg" alt="Акция &quot;Приведи друга&quot; возвращается!">
+                <h3 class="text-lg font-semibold mb-3">Акция "Приведи друга" возвращается!</h3>
+                <p class="text-base mb-3">Рекомендуйте Ars Inform друзьям и получайте бонусы на свой счет. За каждого подключенного друга – до 50 000 сум на услуги.</p>
+                <time class="text-sm tracking-wide text-black/70 mb-4" datetime="2025-02-20">20 февраля 2025</time>
+              </div><a class="button undefined" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Читать</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </article>
+            <article class="flex flex-col justify-between px-4 pt-5 pb-4 card-gradient card-shadow rounded-3xl">
+              <div class="flex flex-col px-1"><img class="w-full rounded-xl aspect-[4/3] mb-4" src="../media/news-05.jpg" alt="Повышение скорости &lt;br/&gt;на тарифах &quot;Стандарт&quot; &lt;br/&gt;и &quot;Максимум&quot;">
+                <h3 class="text-lg font-semibold mb-3">Повышение скорости <br/>на тарифах "Стандарт" <br/>и "Максимум"</h3>
+                <p class="text-base mb-3">С февраля скорость на популярных тарифах увеличивается без изменения стоимости. Больше скорости – те же цены!</p>
+                <time class="text-sm tracking-wide text-black/70 mb-4" datetime="2025-02-10">10 февраля 2025</time>
+              </div><a class="button undefined" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Читать</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </article>
+            <article class="flex flex-col justify-between px-4 pt-5 pb-4 card-gradient card-shadow rounded-3xl">
+              <div class="flex flex-col px-1"><img class="w-full rounded-xl aspect-[4/3] mb-4" src="../media/news-06.jpg" alt="Ars Inform участвует &lt;br/&gt;в технологической &lt;br/&gt;выставке в Ташкенте">
+                <h3 class="text-lg font-semibold mb-3">Ars Inform участвует <br/>в технологической <br/>выставке в Ташкенте</h3>
+                <p class="text-base mb-3">Мы рады стать участником выставки &quot;Digital Uzbekistan 2025&quot;. Приходите на наш стенд, чтобы узнать больше о наших услугах и получить подарки.</p>
+                <time class="text-sm tracking-wide text-black/70 mb-4" datetime="2025-02-01">1 февраля 2025</time>
+              </div><a class="button undefined" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Читать</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </article>
+            <article class="flex flex-col justify-between px-4 pt-5 pb-4 card-gradient card-shadow rounded-3xl">
+              <div class="flex flex-col px-1"><img class="w-full rounded-xl aspect-[4/3] mb-4" src="../media/news-07.jpg" alt="Услуга &quot;Резервный интернет&quot; теперь доступна всем клиентам">
+                <h3 class="text-lg font-semibold mb-3">Услуга "Резервный интернет" теперь доступна всем клиентам</h3>
+                <p class="text-base mb-3">В январе мы запускаем новую услугу для стабильности вашего соединения. Даже при технических работах вы всегда будете оставаться онлайн.</p>
+                <time class="text-sm tracking-wide text-black/70 mb-4" datetime="2025-01-15">15 января 2025</time>
+              </div><a class="button undefined" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Читать</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </article>
+            <article class="flex flex-col justify-between px-4 pt-5 pb-4 card-gradient card-shadow rounded-3xl">
+              <div class="flex flex-col px-1"><img class="w-full rounded-xl aspect-[4/3] mb-4" src="../media/news-08.jpg" alt="Новогодняя лотерея для абонентов">
+                <h3 class="text-lg font-semibold mb-3">Новогодняя лотерея для абонентов</h3>
+                <p class="text-base mb-3">Каждый клиент, подключивший тариф в январе, участвует в розыгрыше призов. Главный приз – смартфон последнего поколения!</p>
+                <time class="text-sm tracking-wide text-black/70 mb-4" datetime="2025-01-07">7 января 2025</time>
+              </div><a class="button undefined" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Читать</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </article>
+            <article class="flex flex-col justify-between px-4 pt-5 pb-4 card-gradient card-shadow rounded-3xl">
+              <div class="flex flex-col px-1"><img class="w-full rounded-xl aspect-[4/3] mb-4" src="../media/news-09.jpg" alt="Ars Inform поддерживает образовательные проекты">
+                <h3 class="text-lg font-semibold mb-3">Ars Inform поддерживает образовательные проекты</h3>
+                <p class="text-base mb-3">Компания подписала соглашение с учебными заведениями Ташкента для предоставления бесплатного интернета в школах и колледжах. Мы стремимся поддерживать развитие технологий в образовании!</p>
+                <time class="text-sm tracking-wide text-black/70 mb-4" datetime="2025-01-03">3 января 2025</time>
+              </div><a class="button undefined" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Читать</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrapper py-16">
+        <div class="container flex gap-16 flex-col lg:flex-row">
+          <div class="grow shrink basis-0 flex-col justify-start items-start gap-6 flex">
+            <div class="self-stretch text-black/75 text-2xl leading-7 font-normal">OOO “ARS-INFORM”</div>
+            <div class="self-stretch text-black/75 text-sm font-normal">(c) 2001-2020. Все права защищены. Лицензия Министерства по развитию информационных технологий и коммуникаций Республики Узбекистан АА №0005958 от 09 сентебря 2016 года.</div>
+            <div class="flex gap-4"><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:telegram-outline"></use>
+                    </svg>
+                  </div>
+                </div></a><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:instagram-outline"></use>
+                    </svg>
+                  </div>
+                </div></a><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:facebook-outline"></use>
+                    </svg>
+                  </div>
+                </div></a>
+            </div>
+          </div>
+          <div class="flex basis-0 grow shrink lg:max-w-[24.75rem] lg:pt-[3.1875rem]">
+            <ul class="flex flex-col lg:flex-row items-start lg:flex-wrap gap-6 lg:gap-4">
+              <li><a class="button-text undefined" href="tel: +998712002001">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 200-20-01</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="tel: +998712735551">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 273-55-51</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="tel: +998712733399">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 273-33-99</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="mailto: arsbox@ars.uz">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:letter-broken"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">arsbox@ars.uz</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="https://yandex.uz/maps/-/CHER4BkH">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:map-point-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">г.Ташкент, Чиланзар – 5, ул. Катартал 29</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

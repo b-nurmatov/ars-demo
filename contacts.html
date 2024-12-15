@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="../scripts/tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script><link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./favicons/favicon-192x192.png">
+<link rel="shortcut icon" type="image/x-icon" href="./favicons/favicon.ico">
+<link rel="icon" type="image/x-icon" href="./favicons/favicon.ico">
+  </head>
+  <body class="bg-neutral-100 font-sans">
+    <div class="flex justify-center items-center bg-[#F5F5F5] sticky top-0 z-50" id="menu">
+      <div class="flex flex-wrap justify-between items-center px-4 lg:px-16 py-4 max-w-screen-xl w-full">
+        <div class="lg:hidden basis-0 shrink grow">
+          <button class="button undefined" id="menu-toggle">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+                <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                  <use xlink:href="/images/sprite.svg#solar:hamburger-menu-outline"></use>
+                </svg>
+              </div>
+              <div class="button-textline">Меню</div>
+              <div class="button-icon-next">
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="hidden px-4 basis-0 shrink grow sm:flex justify-center items-center lg:justify-start lg:order-1"><a class="block w-full max-w-[10.625rem] h-[5rem] bg-[url(/images/logo.png)] bg-no-repeat bg-center bg-contain" href="index.html"></a></div>
+        <div class="basis-0 shrink grow flex justify-end items-center lg:order-3 relative">
+          <div class="flex flex-col">
+            <button class="button undefined" id="lang-toggle">
+              <div class="button-inner">
+                <div class="button-icon-prev">
+                  <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                    <use xlink:href="/images/sprite.svg#solar:global-broken"></use>
+                  </svg>
+                </div>
+                <div class="button-textline">RU</div>
+                <div class="button-icon-next">
+                  <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                    <use xlink:href="/images/sprite.svg#solar:alt-arrow-down-bold"></use>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="relative">
+              <div class="rounded-2xl bg-white shadow-2xl absolute right-0 top-1 w-full border border-stone-200 overflow-hidden hidden" id="lang-menu">
+                <ul class="divide-y">
+                  <li><a class="px-4 py-2 flex text-stone-600 uppercase hover:text-orange-400" href="#">Ru</a></li>
+                  <li><a class="px-4 py-2 flex text-stone-600 uppercase hover:text-orange-400" href="#">Uz</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-auto overflow-hidden lg:overflow-visible menu-hidden lg:order-2" id="nav">
+          <ul class="justify-start lg:justify-center items-center gap-2 flex flex-col lg:flex-row pt-8 lg:pt-0">
+            <li><a class="button undefined" href="internet.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Интернет</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="iptv.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">IPTV</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="services.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Услуги</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="contacts.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Контакты</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+            const topMenu = new Menu({
+                toggleID: 'menu-toggle', 
+                menuID: 'menu', 
+                navID: 'nav',
+                langToggleID: 'lang-toggle',
+                langMenuID: 'lang-menu'
+            });
+        });
+    </script>
+        
+    <div class="flex justify-center items-center bg-neutral-100">
+      <div class="w-full max-w-screen-xl px-4 lg:px-16 py-4 gap-2 flex flex-row flex-wrap justify-between items-center">
+        <div class="flex flex-row justify-start items-center gap-8 lg:w-auto"><a class="button-orange undefined" href="#">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+              </div>
+              <div class="button-textline">Подключиться</div>
+              <div class="button-icon-next">
+              </div>
+            </div></a>
+          <div class="hidden lg:block w-full lg:w-px h-px lg:h-8 bg-black/25"></div>
+          <ul class="hidden md:flex flex-col md:flex-row justify-start items-center flex-wrap gap-4 w-full lg:w-auto">
+            <li><a class="button-text undefined" href="tel: +998712002001">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 200-20-01</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text undefined" href="tel: +998712735551">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 273-55-51</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text undefined" href="tel: +998712733399">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 273-33-99</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+          </ul>
+        </div>
+        <div class="lg:w-auto flex justify-center items-center lg:justify-end"><a class="button-purple undefined" href="#">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+                <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                  <use xlink:href="/images/sprite.svg#solar:user-broken"></use>
+                </svg>
+              </div>
+              <div class="button-textline">Кабинет</div>
+              <div class="button-icon-next">
+              </div>
+            </div></a>
+        </div>
+      </div>
+    </div>
+    <header>
+      <div class="wrapper pt-16">
+        <div class="container">
+          <div class="w-full md:aspect-[21/9] rounded-3xl relative overflow-hidden"><img class="absolute left-0 top-0 z-0 w-full h-full object-cover" src="../media/contacts-banner.jpg"/>
+            <div class="relative md:absolute top-0 z-10 w-full h-full flex flex-col justify-center p-12 text-white items-end text-right max-w-[51rem] right-0">
+              <h1 class="text-3xl md:text-4xl lg:text-5xl tracking-wide font-bold uppercase">Контакты</h1>
+              <p class="text-lg my-4"> Свяжитесь с нами удобным для вас способом, чтобы получить консультацию, оставить заявку или узнать больше о наших услугах.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="pb-16 wrapper">
+        <div class="container">
+          <section class="py-12">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold uppercase mb-4">Главный офис (Ташкент)</h2>
+            <div class="grid md:grid-cols-2 gap-4 lg:gap-16">
+              <ul class="flex flex-col gap-4">
+                <li><a class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600 transition-all hover:text-orange-600" href="tel: +998712002001">
+                    <div class="px-1.5 py-1.5 text-orange-400">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-calling-rounded-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Телефон</h5>
+                      <p class="text-sm">+998 (71) 200-20-01</p>
+                    </div></a>
+                </li>
+                <li><a class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600 transition-all hover:text-orange-600" href="tel: +998712735551">
+                    <div class="px-1.5 py-1.5 text-orange-400">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-calling-rounded-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Телефон</h5>
+                      <p class="text-sm">+998 (71) 273-55-51</p>
+                    </div></a>
+                </li>
+                <li><a class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600 transition-all hover:text-orange-600" href="mailto: arsbox@ars.uz">
+                    <div class="px-1.5 py-1.5 text-orange-400">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:letter-opened-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">E-mail</h5>
+                      <p class="text-sm">arsbox@ars.uz</p>
+                    </div></a>
+                </li>
+                <li><a class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600 transition-all hover:text-orange-600" href="https://yandex.uz/maps/-/CHER4BkH">
+                    <div class="px-1.5 py-1.5 text-orange-400">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:point-on-map-perspective-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Адрес</h5>
+                      <p class="text-sm">г.Ташкент, Чиланзар – 5, ул. Катартал 29</p>
+                    </div></a>
+                </li>
+                <li>
+                  <div class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600">
+                    <div class="px-1.5 py-1.5 text-stone-400">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:calendar-minimalistic-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Время работы</h5>
+                      <p class="text-sm">Понедельник-суббота с 09:00 до 18:00</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600">
+                    <div class="px-1.5 py-1.5 text-stone-400">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:sofa-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Выходной</h5>
+                      <p class="text-sm">Воскресенье (кроме технического отдела)</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="relative overflow-hidden rounded-3xl shadow-xl aspect-square sm:aspect-video md:aspect-auto"><a href="https://yandex.uz/maps/org/1146028595/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Ars inform</a><a href="https://yandex.uz/maps/10335/tashkent/category/internet_service_provider/184105748/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Интернет-провайдер в Ташкенте</a>
+<a href="https://yandex.uz/maps/10335/tashkent/category/internet_marketing/184105738/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Интернет-маркетинг в Ташкенте</a>
+<iframe src="https://yandex.uz/map-widget/v1/?ll=69.214887%2C41.294297&mode=search&oid=1146028595&ol=biz&z=17.15" allowfullscreen="true" class="relative w-full h-full"></iframe>
+              </div>
+            </div>
+          </section>
+          <hr class="hr my-4">
+          <section class="py-8">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold uppercase mb-4">Самарканд</h2>
+            <div class="grid md:grid-cols-2 gap-4 lg:gap-16">
+              <ul class="flex flex-col gap-4">
+                <li><a class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600 transition-all hover:text-orange-600" href="tel: +998662335454">
+                    <div class="px-1.5 py-1.5 text-purple-600">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-calling-rounded-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Телефон</h5>
+                      <p class="text-sm">+998 (66) 233-54-54</p>
+                    </div></a>
+                </li>
+                <li><a class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600 transition-all hover:text-orange-600" href="tel: +998993382434">
+                    <div class="px-1.5 py-1.5 text-purple-600">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-calling-rounded-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Телефон</h5>
+                      <p class="text-sm">+998 (99) 338-24-34</p>
+                    </div></a>
+                </li>
+                <li><a class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600 transition-all hover:text-orange-600" href="mailto: arsbox@ars.uz">
+                    <div class="px-1.5 py-1.5 text-purple-600">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:letter-opened-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">E-mail</h5>
+                      <p class="text-sm">arsbox@ars.uz</p>
+                    </div></a>
+                </li>
+                <li><a class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600 transition-all hover:text-orange-600" href="https://yandex.uz/maps/-/CHERaR29">
+                    <div class="px-1.5 py-1.5 text-purple-600">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:point-on-map-perspective-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Адрес</h5>
+                      <p class="text-sm">г. Самарканд, улица Почтовая, дом 9</p>
+                    </div></a>
+                </li>
+                <li>
+                  <div class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600">
+                    <div class="px-1.5 py-1.5 text-stone-400">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:calendar-minimalistic-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Время работы</h5>
+                      <p class="text-sm">Понедельник-Пятница с 09:00 до 18:00 <br/>Суббота с 09:00 до 13:00</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card-gradient card-shadow px-4 py-4 rounded-lg flex items-center gap-6 text-slate-600">
+                    <div class="px-1.5 py-1.5 text-stone-400">
+                      <svg class="w-9 h-9" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:sofa-bold-duotone"></use>
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 class="text-sm font-semibold uppercase">Выходной</h5>
+                      <p class="text-sm">Воскресенье</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="relative overflow-hidden rounded-3xl shadow-xl aspect-square sm:aspect-video md:aspect-auto"><a href="https://yandex.uz/maps/org/194919862726/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Ars inform</a><a href="https://yandex.uz/maps/10334/samarkand/category/internet_service_provider/184105748/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Интернет-провайдер в Самарканде</a><iframe src="https://yandex.uz/map-widget/v1/?ll=66.957897%2C39.654015&mode=search&oid=194919862726&ol=biz&z=17.15" width="560" height="400" frameborder="1" allowfullscreen="true" class="relative w-full h-full"></iframe></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="wrapper py-16">
+        <div class="container flex gap-16 flex-col lg:flex-row">
+          <div class="grow shrink basis-0 flex-col justify-start items-start gap-6 flex">
+            <div class="self-stretch text-black/75 text-2xl leading-7 font-normal">OOO “ARS-INFORM”</div>
+            <div class="self-stretch text-black/75 text-sm font-normal">(c) 2001-2020. Все права защищены. Лицензия Министерства по развитию информационных технологий и коммуникаций Республики Узбекистан АА №0005958 от 09 сентебря 2016 года.</div>
+            <div class="flex gap-4"><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:telegram-outline"></use>
+                    </svg>
+                  </div>
+                </div></a><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:instagram-outline"></use>
+                    </svg>
+                  </div>
+                </div></a><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:facebook-outline"></use>
+                    </svg>
+                  </div>
+                </div></a>
+            </div>
+          </div>
+          <div class="flex basis-0 grow shrink lg:max-w-[24.75rem] lg:pt-[3.1875rem]">
+            <ul class="flex flex-col lg:flex-row items-start lg:flex-wrap gap-6 lg:gap-4">
+              <li><a class="button-text undefined" href="tel: +998712002001">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 200-20-01</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="tel: +998712735551">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 273-55-51</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="tel: +998712733399">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 273-33-99</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="mailto: arsbox@ars.uz">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:letter-broken"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">arsbox@ars.uz</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="https://yandex.uz/maps/-/CHER4BkH">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:map-point-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">г.Ташкент, Чиланзар – 5, ул. Катартал 29</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="../scripts/tabs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script><link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./favicons/favicon-192x192.png">
+<link rel="shortcut icon" type="image/x-icon" href="./favicons/favicon.ico">
+<link rel="icon" type="image/x-icon" href="./favicons/favicon.ico">
+  </head>
+  <body class="bg-neutral-100 font-sans">
+    <div class="flex justify-center items-center bg-[#F5F5F5] sticky top-0 z-50" id="menu">
+      <div class="flex flex-wrap justify-between items-center px-4 lg:px-16 py-4 max-w-screen-xl w-full">
+        <div class="lg:hidden basis-0 shrink grow">
+          <button class="button undefined" id="menu-toggle">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+                <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                  <use xlink:href="/images/sprite.svg#solar:hamburger-menu-outline"></use>
+                </svg>
+              </div>
+              <div class="button-textline">Меню</div>
+              <div class="button-icon-next">
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="hidden px-4 basis-0 shrink grow sm:flex justify-center items-center lg:justify-start lg:order-1"><a class="block w-full max-w-[10.625rem] h-[5rem] bg-[url(/images/logo.png)] bg-no-repeat bg-center bg-contain" href="index.html"></a></div>
+        <div class="basis-0 shrink grow flex justify-end items-center lg:order-3 relative">
+          <div class="flex flex-col">
+            <button class="button undefined" id="lang-toggle">
+              <div class="button-inner">
+                <div class="button-icon-prev">
+                  <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                    <use xlink:href="/images/sprite.svg#solar:global-broken"></use>
+                  </svg>
+                </div>
+                <div class="button-textline">RU</div>
+                <div class="button-icon-next">
+                  <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                    <use xlink:href="/images/sprite.svg#solar:alt-arrow-down-bold"></use>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="relative">
+              <div class="rounded-2xl bg-white shadow-2xl absolute right-0 top-1 w-full border border-stone-200 overflow-hidden hidden" id="lang-menu">
+                <ul class="divide-y">
+                  <li><a class="px-4 py-2 flex text-stone-600 uppercase hover:text-orange-400" href="#">Ru</a></li>
+                  <li><a class="px-4 py-2 flex text-stone-600 uppercase hover:text-orange-400" href="#">Uz</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full lg:w-auto overflow-hidden lg:overflow-visible menu-hidden lg:order-2" id="nav">
+          <ul class="justify-start lg:justify-center items-center gap-2 flex flex-col lg:flex-row pt-8 lg:pt-0">
+            <li><a class="button undefined" href="internet.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Интернет</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="iptv.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">IPTV</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="services.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Услуги</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button undefined" href="contacts.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Контакты</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+            const topMenu = new Menu({
+                toggleID: 'menu-toggle', 
+                menuID: 'menu', 
+                navID: 'nav',
+                langToggleID: 'lang-toggle',
+                langMenuID: 'lang-menu'
+            });
+        });
+    </script>
+        
+    <div class="flex justify-center items-center bg-neutral-100">
+      <div class="w-full max-w-screen-xl px-4 lg:px-16 py-4 gap-2 flex flex-row flex-wrap justify-between items-center">
+        <div class="flex flex-row justify-start items-center gap-8 lg:w-auto"><a class="button-orange undefined" href="#">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+              </div>
+              <div class="button-textline">Подключиться</div>
+              <div class="button-icon-next">
+              </div>
+            </div></a>
+          <div class="hidden lg:block w-full lg:w-px h-px lg:h-8 bg-black/25"></div>
+          <ul class="hidden md:flex flex-col md:flex-row justify-start items-center flex-wrap gap-4 w-full lg:w-auto">
+            <li><a class="button-text undefined" href="tel: +998712002001">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 200-20-01</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text undefined" href="tel: +998712735551">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 273-55-51</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text undefined" href="tel: +998712733399">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                    </svg>
+                  </div>
+                  <div class="button-textline">+998 (71) 273-33-99</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+          </ul>
+        </div>
+        <div class="lg:w-auto flex justify-center items-center lg:justify-end"><a class="button-purple undefined" href="#">
+            <div class="button-inner">
+              <div class="button-icon-prev">
+                <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                  <use xlink:href="/images/sprite.svg#solar:user-broken"></use>
+                </svg>
+              </div>
+              <div class="button-textline">Кабинет</div>
+              <div class="button-icon-next">
+              </div>
+            </div></a>
+        </div>
+      </div>
+    </div>
+    <header>
+      <div class="wrapper pt-16">
+        <div class="container">
+          <div class="w-full md:aspect-[21/9] rounded-3xl relative overflow-hidden"><img class="absolute left-0 top-0 z-0 w-full h-full object-cover" src="../media/internet-banner.jpg"/>
+            <div class="relative md:absolute top-0 z-10 w-full h-full flex flex-col justify-center p-12 text-white items-start text-left max-w-[51rem] left-0">
+              <h1 class="text-3xl md:text-4xl lg:text-5xl tracking-wide font-bold uppercase">Интернет-тарифы</h1>
+              <p class="text-lg my-4">Мы предлагаем решения для любых потребностей – от базового подключения для ежедневного использования до высокоскоростного интернета для работы, игр и просмотра потокового контента.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="pt-8 pb-16 wrapper">
+        <div class="container">
+          <div class="grid grid-cols-2 gap-8 pb-8">
+            <button class="button " id="toggle-1">
+              <div class="button-inner">
+                <div class="button-icon-prev">
+                </div>
+                <div class="button-textline">Физ. лицам</div>
+                <div class="button-icon-next">
+                </div>
+              </div>
+            </button>
+            <button class="button " id="toggle-2">
+              <div class="button-inner">
+                <div class="button-icon-prev">
+                </div>
+                <div class="button-textline">Юр. лицам</div>
+                <div class="button-icon-next">
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="grid grid-cols-3 gap-8" id="tab-1">
+            <div class="tariff-card tariff-card-orange">
+              <div class="tariff-card-head">
+                <h3 class="tariff-card-name">Best+TV-50</h3>
+                <p class="tariff-card-price">135 000</p>
+                <p class="tariff-card-caption">сум / месяц</p>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">Интернет 50 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                  <li class="tariff-card-feature">IPTV более 140 каналов,</li>
+                  <li class="tariff-card-feature">Tas-IX 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                  <li class="tariff-card-feature">С 00:00 до 10:00</li>
+                  <li class="tariff-card-feature">скорость 100 Мбит/с</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange tariff-card-highlighted">
+              <div class="tariff-card-head">
+                <h3 class="tariff-card-name">Best+TV-100</h3>
+                <p class="tariff-card-price">175 000</p>
+                <p class="tariff-card-caption">сум / месяц</p>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">Интернет 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                  <li class="tariff-card-feature">IPTV более 140 каналов</li>
+                  <li class="tariff-card-feature">Tas-IX 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                  <li class="tariff-card-feature">С 00:00 до 10:00</li>
+                  <li class="tariff-card-feature">скорость 100 Мбит/с</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange">
+              <div class="tariff-card-head">
+                <h3 class="tariff-card-name">Best+TV-200</h3>
+                <p class="tariff-card-price">250 000</p>
+                <p class="tariff-card-caption">сум / месяц</p>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">Интернет 200 Мбит/с</li>
+                  <li class="tariff-card-feature">Круглосуточно</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                  <li class="tariff-card-feature">IPTV более 140 каналов</li>
+                  <li class="tariff-card-feature">Для технологии GPON</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 gap-8" id="tab-2">
+            <div class="tariff-card tariff-card-orange">
+              <div class="tariff-card-head">
+                <h3 class="text-2xl font-bold uppercase">Smart Business — 7</h3>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">С 00:00 до 19:00 — 7 Мбит/с</li>
+                  <li class="tariff-card-feature">С 19:00 до 23:59 — 3 Мбит/с</li>
+                  <li class="tariff-card-feature">Tas-IX — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange">
+              <div class="tariff-card-head">
+                <h3 class="text-2xl font-bold uppercase">Smart Business — 10</h3>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">С 00:00 до 19:00 — 10 Мбит/с</li>
+                  <li class="tariff-card-feature">С 19:00 до 23:59 — 3 Мбит/с</li>
+                  <li class="tariff-card-feature">Tas-IX — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange tariff-card-highlighted">
+              <div class="tariff-card-head">
+                <h3 class="text-2xl font-bold uppercase">Smart Business — 15</h3>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">С 00:00 до 19:00 — 15 Мбит/с</li>
+                  <li class="tariff-card-feature">С 19:00 до 23:59 — 5 Мбит/с</li>
+                  <li class="tariff-card-feature">Tas-IX — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange">
+              <div class="tariff-card-head">
+                <h3 class="text-2xl font-bold uppercase">Smart Business — 20</h3>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">С 00:00 до 19:00 — 20 Мбит/с</li>
+                  <li class="tariff-card-feature">С 19:00 до 23:59 — 5 Мбит/с</li>
+                  <li class="tariff-card-feature">Tas-IX — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange">
+              <div class="tariff-card-head">
+                <h3 class="text-2xl font-bold uppercase">Smart Business — 30</h3>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">С 00:00 до 19:00 — 30 Мбит/с</li>
+                  <li class="tariff-card-feature">С 19:00 до 23:59 — 5 Мбит/с</li>
+                  <li class="tariff-card-feature">Tas-IX — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange tariff-card-highlighted">
+              <div class="tariff-card-head">
+                <h3 class="text-2xl font-bold uppercase">Smart Business — 40</h3>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">С 00:00 до 19:00 — 40 Мбит/с</li>
+                  <li class="tariff-card-feature">С 19:00 до 23:59 — 5 Мбит/с</li>
+                  <li class="tariff-card-feature">Tas-IX — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange">
+              <div class="tariff-card-head">
+                <h3 class="text-2xl font-bold uppercase">Smart Business — 50</h3>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">С 00:00 до 19:00 — 50 Мбит/с</li>
+                  <li class="tariff-card-feature">С 19:00 до 23:59 — 10 Мбит/с</li>
+                  <li class="tariff-card-feature">Tas-IX — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange">
+              <div class="tariff-card-head">
+                <h3 class="text-2xl font-bold uppercase">Smart Business — 75</h3>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">С 00:00 до 19:00 — 75 Мбит/с</li>
+                  <li class="tariff-card-feature">С 19:00 до 23:59 — 10 Мбит/с</li>
+                  <li class="tariff-card-feature">Tas-IX — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+            <div class="tariff-card tariff-card-orange">
+              <div class="tariff-card-head">
+                <h3 class="text-2xl font-bold uppercase">Smart Business — 100</h3>
+              </div>
+              <div class="px-4 py-6 grow">
+                <ul>
+                  <li class="tariff-card-feature">С 00:00 до 19:00 — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">С 19:00 до 23:59 — 20 Мбит/с</li>
+                  <li class="tariff-card-feature">Tas-IX — 100 Мбит/с</li>
+                  <li class="tariff-card-feature">Безлимит</li>
+                </ul>
+              </div>
+              <div class="px-4 py-4"><a class="button undefined" href="#">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                    </div>
+                    <div class="button-textline">Подключить</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </div>
+            </div>
+          </div>
+          <div class="pt-8 pb-12">
+            <p class="p">Резервирование порта: 15 000 сум.</p>
+            <p class="p">Максимальный срок резервирования: 3 месяца.</p>
+            <p class="p">Компания OOO «ARS-INFORM» может предоставить бесплатный WIFI роутер на временное пользование при внесении абонентской оплаты за 3 месяца вперед в новом подключение для постоянных жителей.</p>
+          </div>
+          <aside class="bg-gradient-to-br from-orange-400 to-orange-500 md:aspect-[21/9] lg:aspect-auto lg:h-[20.25rem] rounded-3xl flex text-white relative overflow-hidden pb-72 sm:pb-60 md:pb-0">
+            <div class="px-10 py-10 flex flex-col gap-6 md:gap-4 justify-between relative z-30">
+              <div>
+                <h2 class="text-4xl font-extrabold uppercase">Остались вопросы?</h2>
+                <p class="text-xl font-semibold mt-2">Обращайтесь в наш колл-центр!</p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold tracking-wide uppercase mb-2">Ташкент:</h3>
+                <ul class="flex flex-wrap gap-4">
+                  <li><a class="button-text text-white" href="tel: +998712002001">
+                      <div class="button-inner">
+                        <div class="button-icon-prev">
+                          <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                            <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                          </svg>
+                        </div>
+                        <div class="button-textline">+998 (71) 200 20 01</div>
+                        <div class="button-icon-next">
+                        </div>
+                      </div></a>
+                  </li>
+                  <li><a class="button-text text-white" href="tel: +998712735551">
+                      <div class="button-inner">
+                        <div class="button-icon-prev">
+                          <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                            <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                          </svg>
+                        </div>
+                        <div class="button-textline">+998 (71) 273 55 51</div>
+                        <div class="button-icon-next">
+                        </div>
+                      </div></a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold tracking-wide uppercase mb-2">Самарканд:</h3>
+                <ul class="flex flex-wrap gap-4">
+                  <li><a class="button-text text-white" href="tel: +998662335454">
+                      <div class="button-inner">
+                        <div class="button-icon-prev">
+                          <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                            <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                          </svg>
+                        </div>
+                        <div class="button-textline">+998 (66) 233 54 54</div>
+                        <div class="button-icon-next">
+                        </div>
+                      </div></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="bg-white opacity-40 blur-3xl absolute right-0 lg:right-[5.125rem] -bottom-5 w-96 h-96 rounded-full mix-blend-soft-light"></div>
+            <div class="bg-[url(/images/contacts-banner-orange.webp)] bg-contain w-80 md:w-[20rem] lg:w-[24.75rem] aspect-square absolute bottom-0 lg:-bottom-9 right-0 lg:right-[6.75rem] z-10"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrapper py-16">
+        <div class="container flex gap-16 flex-col lg:flex-row">
+          <div class="grow shrink basis-0 flex-col justify-start items-start gap-6 flex">
+            <div class="self-stretch text-black/75 text-2xl leading-7 font-normal">OOO “ARS-INFORM”</div>
+            <div class="self-stretch text-black/75 text-sm font-normal">(c) 2001-2020. Все права защищены. Лицензия Министерства по развитию информационных технологий и коммуникаций Республики Узбекистан АА №0005958 от 09 сентебря 2016 года.</div>
+            <div class="flex gap-4"><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:telegram-outline"></use>
+                    </svg>
+                  </div>
+                </div></a><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:instagram-outline"></use>
+                    </svg>
+                  </div>
+                </div></a><a class="button undefined" href="#">
+                <div class="button-inner">
+                  <div class="button-icon">
+                    <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                      <use xlink:href="/images/sprite.svg#teenyicons:facebook-outline"></use>
+                    </svg>
+                  </div>
+                </div></a>
+            </div>
+          </div>
+          <div class="flex basis-0 grow shrink lg:max-w-[24.75rem] lg:pt-[3.1875rem]">
+            <ul class="flex flex-col lg:flex-row items-start lg:flex-wrap gap-6 lg:gap-4">
+              <li><a class="button-text undefined" href="tel: +998712002001">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 200-20-01</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="tel: +998712735551">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 273-55-51</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="tel: +998712733399">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:phone-rounded-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">+998 (71) 273-33-99</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="mailto: arsbox@ars.uz">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:letter-broken"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">arsbox@ars.uz</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+              <li><a class="button-text undefined" href="https://yandex.uz/maps/-/CHER4BkH">
+                  <div class="button-inner">
+                    <div class="button-icon-prev">
+                      <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
+                        <use xlink:href="/images/sprite.svg#solar:map-point-linear"></use>
+                      </svg>
+                    </div>
+                    <div class="button-textline">г.Ташкент, Чиланзар – 5, ул. Катартал 29</div>
+                    <div class="button-icon-next">
+                    </div>
+                  </div></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+        const tabManager = new TabManager([
+            { toggleID: 'toggle-1', tabID: 'tab-1' },
+            { toggleID: 'toggle-2', tabID: 'tab-2' }
+        ], 0);
+    </script>
+  </body>
+</html>
