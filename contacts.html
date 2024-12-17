@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Контакты</title>
     <link rel="stylesheet" href="./styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    <script src="./scripts/tabs.js"></script>
+    <script src="./scripts/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script><link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
@@ -18,9 +18,9 @@
 <link rel="icon" type="image/x-icon" href="./favicons/favicon.ico">
   </head>
   <body class="bg-neutral-100 font-sans">
-    <div class="flex justify-center items-center bg-[#F5F5F5] sticky top-0 z-50" id="menu">
-      <div class="flex flex-wrap justify-between items-center px-4 lg:px-16 py-4 max-w-screen-xl w-full">
-        <div class="lg:hidden basis-0 shrink grow">
+    <div class="flex justify-center items-center bg-neutral-100 sticky top-0 z-50" id="menu">
+      <div class="flex flex-wrap justify-between items-center px-4 xl:px-16 py-4 max-w-screen-xl w-full">
+        <div class="xl:hidden basis-0 shrink grow">
           <button class="button undefined" id="menu-toggle">
             <div class="button-inner">
               <div class="button-icon-prev">
@@ -34,10 +34,10 @@
             </div>
           </button>
         </div>
-        <div class="hidden px-4 basis-0 shrink grow sm:flex justify-center items-center lg:justify-start lg:order-1"><a class="block w-full max-w-[10.625rem] h-[5rem] bg-[url(/images/logo.png)] bg-no-repeat bg-center bg-contain" href="index.html"></a></div>
-        <div class="basis-0 shrink grow flex justify-end items-center lg:order-3 relative">
+        <div class="hidden px-4 basis-0 shrink grow sm:flex justify-center items-center xl:justify-start xl:order-1"><a class="block w-full aspect-[5/2] max-h-14 xl:max-h-20 bg-[url(./images/logo.png)] bg-no-repeat bg-center bg-contain" href="index.html"></a></div>
+        <div class="basis-0 shrink grow flex justify-end items-center xl:order-3 relative">
           <div class="flex flex-col">
-            <button class="button undefined" id="lang-toggle">
+            <button class="button-text undefined" id="lang-toggle">
               <div class="button-inner">
                 <div class="button-icon-prev">
                   <svg class="w-6 h-6" width="16" height="16" viewbox="0 0 16 16">
@@ -62,9 +62,9 @@
             </div>
           </div>
         </div>
-        <div class="w-full lg:w-auto overflow-hidden lg:overflow-visible menu-hidden lg:order-2" id="nav">
-          <ul class="justify-start lg:justify-center items-center gap-2 flex flex-col lg:flex-row pt-8 lg:pt-0">
-            <li><a class="button lg:hidden" href="index.html">
+        <div class="w-full xl:w-auto overflow-hidden xl:overflow-visible menu-hidden xl:order-2" id="nav">
+          <ul class="justify-start xl:justify-center items-center gap-4 xl:gap-2 flex flex-col xl:flex-row pt-8 xl:pt-0">
+            <li><a class="button-text xl:text-sm" href="index.html">
                 <div class="button-inner">
                   <div class="button-icon-prev">
                   </div>
@@ -73,7 +73,25 @@
                   </div>
                 </div></a>
             </li>
-            <li><a class="button undefined" href="internet.html">
+            <li><a class="button-text xl:text-sm" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">О компании</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text xl:text-sm" href="news.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Новости</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text xl:text-sm" href="internet.html">
                 <div class="button-inner">
                   <div class="button-icon-prev">
                   </div>
@@ -82,7 +100,7 @@
                   </div>
                 </div></a>
             </li>
-            <li><a class="button undefined" href="iptv.html">
+            <li><a class="button-text xl:text-sm" href="iptv.html">
                 <div class="button-inner">
                   <div class="button-icon-prev">
                   </div>
@@ -91,7 +109,7 @@
                   </div>
                 </div></a>
             </li>
-            <li><a class="button undefined" href="services.html">
+            <li><a class="button-text xl:text-sm" href="services.html">
                 <div class="button-inner">
                   <div class="button-icon-prev">
                   </div>
@@ -100,7 +118,25 @@
                   </div>
                 </div></a>
             </li>
-            <li><a class="button undefined" href="contacts.html">
+            <li><a class="button-text xl:text-sm" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Акции</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text xl:text-sm" href="text-page.html">
+                <div class="button-inner">
+                  <div class="button-icon-prev">
+                  </div>
+                  <div class="button-textline">Клиентам</div>
+                  <div class="button-icon-next">
+                  </div>
+                </div></a>
+            </li>
+            <li><a class="button-text xl:text-sm" href="contacts.html">
                 <div class="button-inner">
                   <div class="button-icon-prev">
                   </div>

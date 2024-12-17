@@ -74,10 +74,14 @@ class Menu {
         })
 
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                this.menu.classList.add('shadow');
+            if (window.scrollY > 10) {
+                this.menu.classList.add('shadow-md');
+                this.menu.classList.add('card-gradient');
+                this.menu.classList.remove('bg-neutral-100');
             } else {
-                this.menu.classList.remove('shadow');
+                this.menu.classList.remove('shadow-md');
+                this.menu.classList.remove('card-gradient');
+                this.menu.classList.add('bg-neutral-100');
             }
         });
     }
