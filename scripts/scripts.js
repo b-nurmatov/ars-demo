@@ -84,6 +84,21 @@ class Menu {
                 this.menu.classList.add('bg-neutral-100');
             }
         });
+
+        this._dropdowns = [];
+        document.querySelectorAll('.menu-dropdown').forEach((item) => {
+            this._dropdowns.push({
+                toggle: item.querySelector('.menu-dropdown-toggle'),
+                list: item.querySelector('.menu-dropdown-list'),
+                isOpen: false
+            });
+        });
+
+        this._dropdowns.forEach((item, index) => {
+            item.toggle.addEventListener('click', () => {
+                this._dropdown(index);
+            });
+        });
     }
     
     _showMenu() {
@@ -108,6 +123,32 @@ class Menu {
             case false:
                 this._isLangMenuOpen = true;
                 this.langMenu.classList.remove('hidden');
+                break;
+        }
+    }
+
+    _dropdown(dropdownIndex) {
+        console.log(this._dropdowns[dropdownIndex].isOpen)
+        function applyClasses(arr) {
+            arr.forEach((item) => {
+                if(item.isOpen) {
+                    item.list.classList.add('menu-dropdown-list-dropped');
+                } else {
+                    item.list.classList.remove('menu-dropdown-list-dropped');
+                }
+            })
+        }
+        switch (this._dropdowns[dropdownIndex].isOpen) {
+            case true:
+                this._dropdowns[dropdownIndex].isOpen = false;
+                applyClasses(this._dropdowns);
+                break;
+            case false:
+                this._dropdowns.forEach((item) => {
+                    item.isOpen = false;
+                });
+                this._dropdowns[dropdownIndex].isOpen = true;
+                applyClasses(this._dropdowns);
                 break;
         }
     }
